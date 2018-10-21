@@ -19,6 +19,6 @@ This images is for my personal use and will not be actively maintained. \
 docker run -it -p 8080:8080 \
   -e PUID=1500 \
   -e PGID=1300 \
-  -e SSL=0
+  -e SSL=0 \
   Wilply/pydio_cells
 ```
