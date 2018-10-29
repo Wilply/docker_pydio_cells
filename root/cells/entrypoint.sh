@@ -12,7 +12,7 @@ if [ $1 == "start" ];then
     echo "[INFO] INITIALISATION SUCESSFUL"
   fi
   chown -R abc:abc /cells && chmod -R 750 /cells
-  chown -R abc:abc /home/abc && chmod -R 750 /home/abc
+  chown -R abc:abc /home/abc/.config/ && chmod -R 750 /home/abc/.config/
   if [ ! -f "/home/abc/.config/pydio/cells/pydio.json" ]; then
     echo "INSTALLING AND STARTING PYDIO"
     if [ $SSL -eq 0 ];then
