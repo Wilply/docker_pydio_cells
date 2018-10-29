@@ -11,12 +11,12 @@ if [ $1 == "start" ];then
     adduser -h /home/abc -D -G abc -u ${PUID} abc
     chown -R abc:abc /cells && chmod -R 750 /cells
     chown -R abc:abc /home/abc && chmod -R 750 /home/abc
+    echo "[INFO] INITIALISATION SUCESSFUL, INSTALLING AND STARTING PYDIO"
     if [ $SSL -eq 0 ];then
       su -c "cells install --no_ssl --bind $CELLS_BIND --external $CELLS_EXTERNAL" abc
     else
       su -c "cells install --bind $CELLS_BIND --external $CELLS_EXTERNAL" abc
     fi
-  echo "[INFO] INITIALISATION SUCESSFUL"
   else
     echo "[INFO] STARTING PYDIO"
     su -c "cells start" abc
