@@ -16,7 +16,9 @@ if [ $1 == "start" ];then
     else
       su -c "cells install --bind $CELLS_BIND --external $CELLS_EXTERNAL" abc
     fi
+  echo "[INFO] INITIALISATION SUCESSFUL"
   else
+    echo "[INFO] STARTING PYDIO"
     su -c "cells start" abc
   fi
 else
