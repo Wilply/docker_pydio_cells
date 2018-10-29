@@ -9,9 +9,12 @@ if [ $1 == "start" ];then
     echo "[INFO] INITIALISING"
     addgroup -g ${PGID} abc
     adduser -h /home/abc -D -G abc -u ${PUID} abc
-    chown -R abc:abc /cells && chmod -R 750 /cells
-    chown -R abc:abc /home/abc && chmod -R 750 /home/abc
-    echo "[INFO] INITIALISATION SUCESSFUL, INSTALLING AND STARTING PYDIO"
+    echo "[INFO] INITIALISATION SUCESSFUL"
+  fi
+  chown -R abc:abc /cells && chmod -R 750 /cells
+  chown -R abc:abc /home/abc && chmod -R 750 /home/abc
+  if [ ! -f "/home/abc/.config/pydio/cells/pydio.json" ]; then
+    echo "INSTALLING AND STARTING PYDIO"
     if [ $SSL -eq 0 ];then
       su -c "cells install --no_ssl --bind $CELLS_BIND --external $CELLS_EXTERNAL" abc
     else
