@@ -13,6 +13,10 @@ This images is for my personal use and will not be actively maintained. \
 `PUID`: user's uid pydio will run as *(default: 1000)* \
 `PGID`: group's gid pydio will run as *(default: 1000)*
 
+#### Volume
+
+`/home/abc/.config/pydio/`: pydio config files folder
+
 #### Example
 
 ```

@@ -5,7 +5,7 @@ if [ $1 == "start" ];then
     echo "[ERROR] UID or GID cannot be lighter than 1000, exiting"
     exit 1
   fi
-  if [ ! -f "/root/.config/pydio/cells/pydio.json" ]; then
+  if [ ! -f "/home/abc/.config/pydio/cells/pydio.json" ]; then
     echo "[INFO] INITIALISING"
     addgroup -g ${PGID} abc
     adduser -h /home/abc -D -G abc -u ${PUID} abc
