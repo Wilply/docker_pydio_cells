@@ -2,30 +2,28 @@ version: '3'
 
 services:
   pydio:
-    image: cells:dev
+    image: cells:v2
     container_name: pydio
     ports:
-      - 80:80
-      - 443:443
       - 8080:8080
     links:
       - pydio_db
     volumes:
-      - /mnt/ETC/DOCKER/container_files/09_pydio/pydio:/root/.config/pydio/cells
-      - /mnt/DATA:/mnt/DATA
+      - /cells/.config/pydio/cells
     environment:
       - SSL=0
-      - CELLS_BIND=localhost:8080
-      - CELLS_EXTERNAL=http://cells.wilply.fr:8080
+      - RUN_AS_ROOT=0
       - PUID=1500
       - PGID=1500
+      - CELLS_BIND=:8080
+      - CELLS_EXTERNAL=http://cells.example.com:8080
 
   pydio_db:
     image: mariadb
     container_name: pydio_db
     restart: always
     volumes:
-      - /mnt/ETC/DOCKER/container_files/09_pydio/pydio_db/mysql:/var/lib/mysql
+      - /var/lib/mysql
     expose:
       - 3306
     environment:
