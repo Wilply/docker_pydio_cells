@@ -9,7 +9,7 @@ This images is for my personal use and will not be actively maintained. \
 
 `CELLS_EXTERNAL`: external url - used to acess from the web *(default: pydio.example.com)* \
 `CELLS_BIND`: internal url - used by services to talk between each others *(default: localhost:8080)* \
-`SSL`: set 0 if you dont want to use a self-generated ssl cerificate *(default: 0)* \
+`SSL`: set 1 if you dont want to use a self-generated ssl cerificate *(default: 0)* \
 `PUID`: user's uid pydio will run as *(default: 1500)* \
 `PGID`: group's gid pydio will run as *(default: 1500)* \
 `RUN_AS_ROOT`: set to 1 to run pydio as root *(default: 0)*
