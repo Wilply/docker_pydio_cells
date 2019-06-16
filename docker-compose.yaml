@@ -2,7 +2,7 @@ version: '3'
 
 services:
   pydio:
-    image: cells:v2
+    image: wilply/pydio_cells
     container_name: pydio
     ports:
       - 8080:8080
