@@ -7,22 +7,19 @@ This images is for my personal use and will not be actively maintained. \
 
 #### ENV variables
 
-`CELLS_EXTERNAL`: external url - used in links, etc.. *(default: localhost:8080)* \
+`CELLS_EXTERNAL`: external url - used to acess from the web *(default: pydio.example.com)* \
 `CELLS_BIND`: internal url - used by services to talk between each others *(default: localhost:8080)* \
-`SSL`: set 0 if you dont want to use a self-generated ssl cerificate *(default: 1)* \
-`PUID`: user's uid pydio will run as *(default: 1000)* \
-`PGID`: group's gid pydio will run as *(default: 1000)*
+`SSL`: set 0 if you dont want to use a self-generated ssl cerificate *(default: 0)* \
+`PUID`: user's uid pydio will run as *(default: 1500)* \
+`PGID`: group's gid pydio will run as *(default: 1500)* \
+`RUN_AS_ROOT`: set to 1 to run pydio as root *(default: 0)*
 
 #### Volume
 
-`/home/abc/.config/pydio/`: pydio config files folder
+`/cell/.config/pydio/cells`: pydio config files folder
 
 #### Example
 
 ```
-docker run -it -p 8080:8080 \
-  -e PUID=1500 \
-  -e PGID=1300 \
-  -e SSL=0 \
-  wilply/pydio_cells
+Look at compose file for example.
 ```
